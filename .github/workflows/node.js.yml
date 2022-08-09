@@ -25,14 +25,31 @@ jobs:
         cache: 'yarn'
     - run: yarn install --frozen-lockfile
     - run: yarn build
+    - name: Upload Artefact
+      uses: actions/upload-artifact@v3
+      with:
+        name: build
+        path: build
 
+  deploy:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
     - uses: actions/checkout@v3
     - name: Deploy
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'yarn'
-    - run: yarn install --frozen-lockfile
+    - name: Download a single artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: build
     - run: |
         git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
         npx gh-pages -d build -u "github-actions-bot <support+actions@github.com>"
