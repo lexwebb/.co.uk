@@ -60,4 +60,5 @@ jobs:
 
     - name: Deploy
       run: |
+        echo 'lexwebb.co.uk' > ./build/CNAME
         npx gh-pages -d build -u "github-actions-bot <support+actions@github.com>"
