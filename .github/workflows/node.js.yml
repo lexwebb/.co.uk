@@ -22,10 +22,10 @@ jobs:
         cache: 'yarn'
 
     - name: yarn install
-    - run: yarn install --frozen-lockfile
+      run: yarn install --frozen-lockfile
 
     - name: Build
-    - run: yarn build
+      run: yarn build
 
     - name: Upload Artefact
       uses: actions/upload-artifact@v3
@@ -53,11 +53,11 @@ jobs:
         path: build
 
     - name: Configure Git
-    - run: |
+      run: |
         git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Deploy
-    - run: |
+      run: |
         npx gh-pages -d build -u "github-actions-bot <support+actions@github.com>"
