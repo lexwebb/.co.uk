@@ -1,8 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "./Home.module.scss";
-import { useSpring, animated } from "react-spring";
-import { useMousePosition } from "../hooks/useMousePosition";
-import githubLogo from "../images/GitHub-Mark.svg";
 import Typography from "./Typography";
 import Container from "./Container";
 
