@@ -2,10 +2,21 @@ import React from "react";
 import styles from "./Home.module.scss";
 import Typography from "./Typography";
 import Container from "./Container";
+import Nav from "./Nav";
+import { useDarkMode } from "usehooks-ts";
+import classNames from "classnames";
 
 const Home = () => {
+  const { isDarkMode } = useDarkMode();
+
+  const tab = "home";
   return (
-    <div className={styles.page}>
+    <div
+      className={classNames(
+        styles.page,
+        isDarkMode ? styles.darkMode : styles.lightMode
+      )}
+    >
       <div className={styles.mainContainer}>
         <div className={styles.header}>
           <Typography as="h1">
@@ -18,7 +29,8 @@ const Home = () => {
           <span></span>
         </div>
         <Container className={styles.content}>
-          Coming soon to a screen near you
+          <Nav tab={tab} />
+          <span>Coming Soon</span>
         </Container>
       </div>
     </div>
