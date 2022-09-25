@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./Nav.module.scss";
-import githubLogo from "../images/GitHub-Mark.svg";
 import {
   RiHomeLine,
   RiFileList2Line,
@@ -19,10 +18,10 @@ function Nav({ tab }: Props) {
   return (
     <div className={styles.navContainer}>
       <div className={styles.nav}>
-        <a href="">
+        <a href="/">
           <RiHomeLine />
         </a>
-        <a href="">
+        <a href="/">
           <RiFileList2Line />
         </a>
         <span className={styles.divider} />
