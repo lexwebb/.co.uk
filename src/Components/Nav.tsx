@@ -19,7 +19,7 @@ function Nav({ tab }: Props) {
   return (
     <div className={styles.navContainer}>
       <div className={styles.nav}>
-        <a href="https://github.com/lexwebb">
+        <a href="">
           <RiHomeLine />
         </a>
         <a href="">

@@ -30,6 +30,7 @@ const Home = () => {
         </div>
         <Container className={styles.content}>
           <Nav tab={tab} />
+          <span>Coming Soon</span>
         </Container>
       </div>
     </div>
