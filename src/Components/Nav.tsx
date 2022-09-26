@@ -1,15 +1,12 @@
 import React from "react";
 import styles from "./Nav.module.scss";
-import {
-  RiHomeLine,
-  RiFileList2Line,
-  RiSunLine,
-  RiSunFill,
-} from "react-icons/ri";
+import { RiSunLine, RiSunFill } from "react-icons/ri";
 import { useDarkMode } from "usehooks-ts";
+import { Link } from "react-router-dom";
+import { routes } from "../config/routes";
 
 type Props = {
-  tab: "home" | "about" | "projects" | "contact";
+  tab: "home" | "cv" | "projects" | "contact";
 };
 
 function Nav({ tab }: Props) {
@@ -18,14 +15,13 @@ function Nav({ tab }: Props) {
   return (
     <div className={styles.navContainer}>
       <div className={styles.nav}>
-        <a href="/">
-          <RiHomeLine />
-        </a>
-        <a href="/">
-          <RiFileList2Line />
-        </a>
+        {Object.entries(routes).map(([path, route]) => (
+          <Link to={path} key={path} aria-label={route.name}>
+            {React.createElement(route.icon, {})}
+          </Link>
+        ))}
         <span className={styles.divider} />
-        <button onClick={toggle}>
+        <button onClick={toggle} aria-label="Toggle dark-mode">
           {isDarkMode ? <RiSunFill /> : <RiSunLine />}
         </button>
       </div>

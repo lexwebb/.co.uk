@@ -1,12 +1,13 @@
 import React from "react";
-import styles from "./Home.module.scss";
-import Typography from "./Typography";
+import styles from "./Layout.module.scss";
 import Container from "./Container";
 import Nav from "./Nav";
 import { useDarkMode } from "usehooks-ts";
 import classNames from "classnames";
+import { Outlet } from "react-router-dom";
+import Header from "./Header";
 
-const Home = () => {
+const Layout = () => {
   const { isDarkMode } = useDarkMode();
 
   const tab = "home";
@@ -18,23 +19,16 @@ const Home = () => {
       )}
     >
       <div className={styles.mainContainer}>
-        <div className={styles.header}>
-          <Typography as="h1">
-            {"LEX SOUTHIN-WEBB".split("").map((letter, index) => (
-              <span key={index} className={styles.letter}>
-                {letter}
-              </span>
-            ))}
-          </Typography>
-          <span></span>
-        </div>
+        <Header />
         <Container className={styles.content}>
           <Nav tab={tab} />
-          <span>Coming Soon</span>
+          <section>
+            <Outlet />
+          </section>
         </Container>
       </div>
     </div>
   );
 };
 
-export default Home;
+export default Layout;

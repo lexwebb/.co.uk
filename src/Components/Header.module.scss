@@ -1,0 +1,24 @@
+.header {
+  margin: 2rem 0 2rem 0;
+
+  @include lg {
+    margin: 1rem 0 2rem 0;
+  }
+
+  h1 {
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    transition-property: color, background-color, border-color, font-size;
+    font-size: 1.5rem;
+    overflow: hidden;
+
+    @include sm {
+      font-size: 2rem;
+    }
+
+    @include xl {
+      font-size: 3rem;
+    }
+  }
+}
