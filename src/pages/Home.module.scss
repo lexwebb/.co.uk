@@ -1,0 +1,58 @@
+.container {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: min-content 1fr;
+  gap: 2rem;
+  grid-template-areas:
+    "image links"
+    "about about";
+
+  .about {
+    grid-area: about;
+  }
+  .links {
+    grid-area: links;
+
+    a {
+      color: var(--color-ui-foreground);
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      font-size: 2rem;
+      text-decoration: none;
+
+      &:hover {
+        color: var(--color-ui-hover);
+      }
+
+      svg {
+        height: 3rem;
+        width: 3rem;
+      }
+    }
+  }
+  .image {
+    grid-area: image;
+    img {
+      width: 6rem;
+      height: 6rem;
+      filter: grayscale(100%);
+      border: 0.5rem solid var(--color-ui-foreground);
+      border-radius: 100%;
+      transition: all 0.3s ease;
+      transition-property: width, height, border-color;
+      background-color: #aaa;
+
+      @include md {
+        width: 10rem;
+        height: 10rem;
+      }
+
+      @include lg {
+        width: 15rem;
+        height: 15rem;
+      }
+    }
+  }
+}
