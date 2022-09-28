@@ -1,7 +1,9 @@
-import React from "react";
 import styles from "./Home.module.scss";
 import me from "../images/me.png";
 import GithubIcon from "../icons/GithubIcon";
+import { RiLinkedinBoxFill } from "react-icons/ri";
+import Markdown from "../Components/Markdown";
+import React from "react";
 
 const Home = () => {
   return (
@@ -14,9 +16,14 @@ const Home = () => {
           <GithubIcon />
           Github // lexwebb
         </a>
+        <a href="https://www.linkedin.com/in/lex-southin-webb-76b582103/">
+          <RiLinkedinBoxFill />
+          Linkedin // Lex Southin-Webb
+        </a>
       </div>
-      {/* https://github.com/remarkjs/react-markdown */}
-      <div className={styles.about}>content here</div>
+      <div className={styles.about}>
+        <Markdown file="about" />
+      </div>
     </div>
   );
 };

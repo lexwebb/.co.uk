@@ -23,6 +23,9 @@
   }
   .links {
     grid-area: links;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 
     a {
       color: var(--color-ui-foreground);
@@ -47,15 +50,21 @@
       svg {
         height: 1.5rem;
         width: 1.5rem;
+        min-height: 1.5rem;
+        min-width: 1.5rem;
 
         @include md {
           height: 2rem;
           width: 2rem;
+          min-height: 2rem;
+          min-width: 2rem;
         }
 
         @include lg {
           height: 3rem;
           width: 3rem;
+          min-height: 3rem;
+          min-width: 3rem;
         }
       }
     }
