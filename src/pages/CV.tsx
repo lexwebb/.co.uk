@@ -1,10 +1,11 @@
 import React from "react";
+import Markdown from "../Components/Markdown";
 import Page from "../Components/Page";
 
 const CV = () => {
   return (
     <Page>
-      <span>Coming Soon</span>
+      <Markdown file="cv" />
     </Page>
   );
 };

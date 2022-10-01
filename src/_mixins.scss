@@ -32,3 +32,14 @@
         @content;
     }
  }
+
+ // Firefox detector
+ @mixin firefox-only {
+    @at-root {
+      @-moz-document url-prefix() {
+        & {
+          @content;
+        }
+      }
+    }
+  }

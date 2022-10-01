@@ -19,6 +19,27 @@
   transition: all 0.3s ease;
   transition-property: color, background-color, border-color, padding;
 
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: var(--color-ui-foreground) var(--color-ui-background);
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 1.75rem;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: var(--color-ui-background);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--color-ui-foreground);
+    border-radius: 20px;
+    border: 0.75rem solid var(--color-ui-background);
+  }
+
   @include lg {
     padding: 1rem;
     height: calc(100% - 2rem);
@@ -40,10 +61,20 @@
         flex-direction: row;
       }
 
+      @include firefox-only {
+        &:after {
+          content: "";
+          height: 50px;
+          width: 0.5rem;
+          display: block;
+        }
+      }
+
       > section {
         overflow: auto;
         padding: 2rem;
         flex: 1;
+        display: flex;
       }
     }
   }
