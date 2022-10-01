@@ -1,10 +1,11 @@
 import React from "react";
+import Page from "../Components/Page";
 
 const CV = () => {
   return (
-    <div>
+    <Page>
       <span>Coming Soon</span>
-    </div>
+    </Page>
   );
 };
 

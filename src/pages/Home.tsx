@@ -5,9 +5,11 @@ import { RiLinkedinBoxFill } from "react-icons/ri";
 import Markdown from "../Components/Markdown";
 import React from "react";
 
+import Page from "../Components/Page";
+
 const Home = () => {
   return (
-    <div className={styles.container}>
+    <Page className={styles.container}>
       <div className={styles.image}>
         <img src={me} alt="Lex's Face" />
       </div>
@@ -24,7 +26,7 @@ const Home = () => {
       <div className={styles.about}>
         <Markdown file="about" />
       </div>
-    </div>
+    </Page>
   );
 };
 
