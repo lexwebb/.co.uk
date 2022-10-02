@@ -16,7 +16,8 @@
   height: calc(100%);
   background-color: var(--color-ui-background);
   color: var(--color-ui-foreground);
-  transition: background-color $mode-transition-speed ease;
+  transition: all $mode-transition-speed ease;
+  transition-property: background-color, padding, font-size;
 
   /* Firefox */
   * {
