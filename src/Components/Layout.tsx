@@ -20,7 +20,7 @@ const Layout = () => {
     >
       <div className={styles.mainContainer}>
         <Header />
-        <Container className={styles.content}>
+        <Container className={styles.content} data-animate="color">
           <Nav tab={tab} />
           <section>
             <Outlet />

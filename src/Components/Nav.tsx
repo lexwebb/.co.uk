@@ -14,7 +14,7 @@ function Nav({ tab }: Props) {
 
   return (
     <div className={styles.navContainer}>
-      <div className={styles.nav}>
+      <div className={styles.nav} data-animate="color">
         {Object.entries(routes).map(([path, route]) => (
           <Link to={path} key={path} aria-label={route.name}>
             {React.createElement(route.icon, {})}

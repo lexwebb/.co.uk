@@ -9,9 +9,12 @@ type Props = {
 const Container: React.FC<PropsWithChildren<Props>> = ({
   children,
   className,
+  ...props
 }) => {
   return (
-    <div className={classNames(styles.container, className)}>{children}</div>
+    <div className={classNames(styles.container, className)} {...props}>
+      {children}
+    </div>
   );
 };
 

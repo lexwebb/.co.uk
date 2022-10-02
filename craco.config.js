@@ -5,6 +5,7 @@ module.exports = {
         additionalData: `
             @import "src/_breakpoints.scss";
             @import "src/_mixins.scss";
+            @import "src/_globals.scss";
           `,
       },
     },

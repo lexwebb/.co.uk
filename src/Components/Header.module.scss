@@ -8,8 +8,6 @@
   h1 {
     display: flex;
     justify-content: space-between;
-    transition: all 0.3s ease;
-    transition-property: color, background-color, border-color, font-size;
     font-size: 1.5rem;
     overflow: hidden;
 
@@ -19,11 +17,6 @@
 
     @include xl {
       font-size: 3rem;
-    }
-
-    span {
-      transition: all 0.3s ease;
-      transition-property: color, background-color, border-color, font-size;
     }
   }
 }

@@ -16,8 +16,7 @@
   height: calc(100%);
   background-color: var(--color-ui-background);
   color: var(--color-ui-foreground);
-  transition: all 0.3s ease;
-  transition-property: color, background-color, border-color, padding;
+  transition: background-color $mode-transition-speed ease;
 
   /* Firefox */
   * {
@@ -31,13 +30,14 @@
   }
 
   *::-webkit-scrollbar-track {
-    background: var(--color-ui-background);
+    background: transparent;
   }
 
   *::-webkit-scrollbar-thumb {
     background-color: var(--color-ui-foreground);
     border-radius: 20px;
-    border: 0.75rem solid var(--color-ui-background);
+    border: 0.75rem solid;
+    border-color: var(--color-ui-background);
   }
 
   @include lg {
@@ -79,16 +79,9 @@
     }
   }
 
-  div,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  svg {
-    transition: all 0.3s ease;
-    transition-property: color, background-color, border-color;
+  div[data-animate="color"],
+  img,
+  a {
+    @include transition-mode;
   }
 }
