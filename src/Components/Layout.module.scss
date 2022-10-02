@@ -24,6 +24,8 @@
     scrollbar-color: var(--color-ui-foreground) var(--color-ui-background);
   }
 
+  // TODO: https://stackoverflow.com/a/57483486/2088626
+
   /* Chrome, Edge, and Safari */
   *::-webkit-scrollbar {
     width: 1.75rem;
